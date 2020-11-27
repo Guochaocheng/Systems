@@ -52,6 +52,7 @@ body {
     bottom: 0px;
     width: 100%;
     height: 100%;
+    background-color:  #545C64;
 }
 
 </style>
