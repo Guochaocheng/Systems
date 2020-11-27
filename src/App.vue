@@ -1,21 +1,14 @@
 <template>
   <div id="app">
-    <!--
-    <img src="./assets/logo.png">
-    -->
     <el-container>
-      <el-header>
-        <gheader/>
-      </el-header>
-      <el-container>
+      <el-header><gheader/></el-header>
+      <el-container class="g-container">
         <el-main>
         <router-view></router-view>
         </el-main>
       </el-container>
     </el-container>
-    <el-footer class="gfooter">
-      <gfooter/>
-    </el-footer>
+    <el-footer class="g-footer"><gfooter/></el-footer>
   </div>
 </template>
 
@@ -36,22 +29,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-html {
-  height: 100%;
-}
-body {
-  min-height: 100%;
-  margin: 0px;
-  padding: 0px;
-  position: relative;
-}
-.gfooter {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    height: 100%;
-}
-
 </style>

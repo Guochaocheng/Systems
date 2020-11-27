@@ -1,19 +1,12 @@
-html{
-    height:100%;
+html {
+    height: 100%;
 }
-body{
-    background-color: aliceblue;
+body {
     min-height: 100%;
-    display: flex;
-    flex-direction: column;
-
+    margin: 0px;
+    padding: 0px;
+    position: relative;
 }
-.el-menu-demo{
-    position: absolute;
-    top:0;
-    width: 100%;
-}
-
 .main{
     flex: 1;
     text-align: left;
@@ -23,7 +16,11 @@ body{
     margin-right: 100px;
     margin-bottom: 30px;
 }
-.footer{
+
+.g-container {
+    margin-top: 60px;
+}
+.g-footer {
     position: absolute;
     text-align: center;
     bottom:0px;
@@ -31,9 +28,16 @@ body{
     width: 100%;
     background-color: #545C64;
     height: 40px;
+    line-height: 40px;
 }
-.footer p{
+
+.g-footer p{
     color:white;
     font-size: 10px;
     margin-top: 15px;
+}
+.el-menu-demo{
+    position: absolute;
+    top:0;
+    width: 100%;
 }

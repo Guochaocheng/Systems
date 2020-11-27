@@ -5,7 +5,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
-import './components/container.css'
+import '@/styles/container.css'
 import 'normalize.css'
 
 Vue.config.productionTip = false
