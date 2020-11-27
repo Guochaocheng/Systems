@@ -3,15 +3,13 @@
     <!--
     <img src="./assets/logo.png">
     -->
-    <el-container>
-      <el-header>
+     <el-header style="height:30px;">
         <gheader/>
       </el-header>
-      <el-container>
-        <el-main>
-        <router-view></router-view>
-        </el-main>
-      </el-container>
+    <el-container>
+      <el-main>
+      <router-view></router-view>
+      </el-main>
     </el-container>
     <el-footer class="gfooter">
       <gfooter/>

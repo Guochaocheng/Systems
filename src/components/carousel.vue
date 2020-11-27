@@ -1,7 +1,8 @@
 <template>
     <div class="block">
-    <span class="demonstration">Recent publications</span>
-    <el-carousel trigger="click" height="500px" width="500px">
+    <div class="demonstration">Recent publications</div>
+    <el-divider></el-divider>
+    <el-carousel trigger="click" height="500px" width="400px">
     <!--<el-carousel-item v-for="item in 4" :key="item">-->
     <el-carousel-item class="el-carousel-item"> <img src="../assets/age_mouse.jpg" alt=""></el-carousel-item>
     <el-carousel-item class="el-carousel-item"> <img src="../assets/eGWAS_mouse.jpg" alt=""></el-carousel-item>
@@ -43,16 +44,16 @@ background-color: #99a9bf;
 background-color: #d3dce6;
 }
 .el-carousel__item img{
-    width: 500px;
+    width: 710px;
     height: 500px;
 }
 .block{
-    margin-top: 50px;
-    margin-left: 50px;
+    margin-left:50px;
 }
-.block span{
+.demonstration{
     font-size: 30px;
-    padding-bottom:20px;
     font: bold;
+    text-align: left;
+    margin-bottom: 10px;
 }
 </style>
