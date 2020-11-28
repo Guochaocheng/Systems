@@ -1,19 +1,16 @@
 <template>
   <div id="app">
-    <!--
-    <img src="./assets/logo.png">
-    -->
-     <el-header style="height:30px;">
-        <gheader/>
-      </el-header>
     <el-container>
-      <el-main>
+    <el-header class="header" >
+      <gheader />
+    </el-header>
+    <el-main class="wraper" :style="{minHeight: Height+'px'}">
       <router-view></router-view>
-      </el-main>
-    </el-container>
-    <el-footer class="gfooter">
+    </el-main>
+    <el-footer class="footer" style="height:40px;">
       <gfooter/>
     </el-footer>
+    </el-container>
   </div>
 </template>
 
@@ -23,7 +20,14 @@ import gfooter from '@/components/footer'
 
 export default {
   components: { gheader, gfooter },
-  name: 'App'
+  name: 'App',
+  data(){ 
+    return { Height:0}
+  },
+  mouted(){
+    this.Height = document.documentElement.clientHeight - 100;
+    window.onresize = ()=> {thie.Height = documentElement.clientHeight -100}
+  }
 }
 </script>
 
@@ -33,25 +37,46 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-html {
-  height: 100%;
-}
-body {
-  min-height: 100%;
-  margin: 0px;
-  padding: 0px;
-  padding-bottom: 50px;
+  background-color:aliceblue;
+  width: 100%;
   position: relative;
+  min-height: 100%;
+  padding-bottom: 60px;
+  box-sizing: border-box;
 }
-.gfooter {
-    position: absolute;
+head{
+  width: 100%;
+  left: 0px;
+}
+html, body{
+  height:100%;
+  background-color:aliceblue;
+}
+.footer, .wraper::after{
+  height:30px;
+}
+.el-main{
+  margin-top:80px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  min-height: calc(100vh - 90px);
+  border-radius: 0;
+}
+.footer {
+    position: fixed;
     bottom: 0px;
     width: 100%;
-    height: 100%;
+    height: 30px;
     background-color:  #545C64;
+    float: center;
+    display: block;
+    margin: 0 auto;
 }
-
+.header{
+  left:0px;
+  width: 100%;
+  position: absolute;
+  top:0px;
+  transition: all 0.1s;
+}
 </style>

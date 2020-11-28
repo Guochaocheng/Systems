@@ -1,45 +1,127 @@
 <template>
-    <div class="publications">
-        <h1>students</h1>
-        <el-row :gutter="20">
-            <el-col :span="20">
-                <h2>2020</h2>
-                <p>
-                1. Sleiman MB, Jha P, Houtkooper R, Williams R, Wang X*, Auwerx J*. The gene regulatory footprint of aging highlights conserved central regulators. Cell Reports. 2020 In Press. (IF= 8.109)<br>
-                2. Liu M#, Sun W#, Ma Z, Yu G, Li J, Wang Y, Wang Xu. Comprehensive multiomics analysis reveals key roles of NACs in plant growth and development and its environmental adaption mechanism by regulating metabolite pathways. Genomics. 2020; 112: 4897-4911. (IF= 6.205)<br>
-                3. Oppi S, Nusser-Stein S, Blyszczuk P, Wang X, Jomard A, Marzolla V, Yang K, Velagapudi S, Ward LJ, Yuan XM, Geiger MA, Guillaumon AT, Othman A, Hornemann T, Rancic Z, Ryu D, Oosterveer MH, Osto E, Lüscher TF, Stein S. Macrophage NCOR1 protects from atherosclerosis by repressing a pro-atherogenic PPARγ signature. Eur Heart J. 2020; 41: 995-1005. (IF=22.673)<br>
-                4. Houzelle A, Dahlmans D, Nascimento EBM, Schaart G, Jörgensen JA, Moonen-Kornips E, Kersten S, Wang X, Hoeks J. MicroRNA-204-5p modulates mitochondrial biogenesis in C2C12 myotubes and associates with oxidative capacity in humans. J Cell Physiol. 2020: 1-13. (IF=5.546)<br>
-                </p>
-                <h2>2019</h2>
-                <p>
-                5. Dahlmans D, Houzelle A, Andreux P, Wang X, Jorgensen JA, Moullan N, Daemen S, Kersten S, Auwerx J, Hoeks J. MicroRNA-382 silencing induces a mitonuclear protein imbalance and activates the mitochondrial unfolded protein response in muscle cells. J Cell Physiol 2019; 234: 6601-6610. (IF=5.546)
-                </p>
-                <h2>2018</h2>
-                <p>
-                6. Li H#, Wang X#, Rukina D, Huang Q, Lin T, Sorrentino V, Zhang H, Sleiman MB, Arends D, McDaid A, Luan P, Ziari N, Velázquez-Villegas LA, Gariani K, Kutalik Z, Schoonjans K, Radcliffe RA, Prins P, Morgenthaler S, Williams RW, Auwerx J. An integrated systems genetics and omics toolkit to probe gene function. Cell Systems 2018; 6: 90-102. (IF=8.673)
-                </p>
-                <h2>2017</h2>
-                <p>
-                7. Wang X & Auwerx J. Systems phytohormone responses to mitochondrial proteotoxic stress. Molecular Cell 2017; 68: 540-51. (IF=15.584) <br>
-                8. Stein S#, Lemos V#, Xu P, Demagny H, Wang X, Ryu D, Jimenez V, Bosch F, Lüscher TF, Oosterveer MH, Schoonjans K. Impaired SUMOylation of nuclear receptor LRH-1 promotes nonalcoholic fatty liver disease. J Clin Invest. 2017; 127(2):583-592. (IF=11.864)<br>
-                ...
-                </p>
-            </el-col>
-        </el-row>
+    <div class="people">
+        <el-card class="card-box">
+        <div style="width:1400px">
+            <div style="width:100%;height:100px;text-align:left;font:bold 35px Arial,Helvetica,sans-serif;line-height:100px" >People</div>
+            <div style="width:100%;height:1px;background:#CCCCCC" ></div>
+            <div style="width:100%;height:20px;"></div>
+            <div class="peopletype">Principle Investigator </div>
+            <div style="width:100%;height:2px;background:#CCCCCC" ></div>
+            <div class="peopleboxbig"><div class="peopleshadowbig">
+                <div class="peoplephoto"><img class="peopleimage" src="../assets/Wangxu.jpg" alt=""></div>
+                <div class="peoplenameshadowbig"><div class="peoplemail">Wang Xu<br/>Professor<br>xu.wang@sjtu.edu.cn</div></div>
+            </div></div>
+            <!-- Research Assistants Professor -->
+            <div style="width:100%;height:2px;background:#CCCCCC" ></div>
+            <div style="width:100%;height:20px;"></div>
+            <div class="peopletype">Research Assistants Professor</div>
+            <div style="width:100%;height:2px;background:#CCCCCC" ></div>
+            <div class="peopleboxbig">
+                <div class="peopleshadow">
+                    <div class="peoplephoto"><img class="peopleimage" src="../assets/Wangxu.jpg" alt=""></div>
+                    <div class="peoplenameshadow"><div class="peoplemail" >Wang Xu<br/>Professor<br>xu.wang@sjtu.edu.cn</div></div>
+                </div>
+                <div class="peopleshadow">
+                    <div class="peoplephoto"><img class="peopleimage" src="../assets/Wangxu.jpg" alt=""></div>
+                    <div class="peoplenameshadow"><div class="peoplemail">Wang Xu<br/>Professor<br>xu.wang@sjtu.edu.cn</div></div>
+                </div>
+            </div>
+            <div class="peopleboxbig">
+                <div class="peopleshadow">
+                        <div class="peoplephoto"><img class="peopleimage" src="../assets/Wangxu.jpg" alt=""></div>
+                        <div class="peoplenameshadow"><div class="peoplemail" >Wang Xu<br/>Professor<br>xu.wang@sjtu.edu.cn</div></div>
+                </div>
+            </div>
+            <!-- Research Assistants Professor -->
 
+            <!-- PhD students -->
+            <div style="width:100%;height:2px;background:#CCCCCC" ></div>
+            <div style="width:100%;height:20px;"></div>
+            <div class="peopletype">Ph.D Students</div>
+            <div style="width:100%;height:2px;background:#CCCCCC" ></div>
+            <div class="peopleboxbig">
+                <div class="peopleshadow">
+                    <div class="peoplephoto"><img class="peopleimage" src="../assets/Wangxu.jpg" alt=""></div>
+                    <div class="peoplenameshadow"><div class="peoplemail" >Wang Xu<br/>Professor<br>xu.wang@sjtu.edu.cn</div></div>
+                </div>
+                <div class="peopleshadow">
+                    <div class="peoplephoto"><img class="peopleimage" src="../assets/Wangxu.jpg" alt=""></div>
+                    <div class="peoplenameshadow"><div class="peoplemail">Wang Xu<br/>Professor<br>xu.wang@sjtu.edu.cn</div></div>
+                </div>
+            </div>
+            <!--  PhD students -->
+
+            <!-- Master students -->
+            <div style="width:100%;height:2px;background:#CCCCCC" ></div>
+            <div style="width:100%;height:20px;"></div>
+            <div class="peopletype">M.S. Students</div>
+            <div style="width:100%;height:2px;background:#CCCCCC" ></div>
+            <div class="peopleboxbig">
+                <div class="peopleshadow">
+                    <div class="peoplephoto"><img class="peopleimage" src="../assets/Wangxu.jpg" alt=""></div>
+                    <div class="peoplenameshadow"><div class="peoplemail" >Wang Xu<br/>Professor<br>xu.wang@sjtu.edu.cn</div></div>
+                </div>
+                <div class="peopleshadow">
+                    <div class="peoplephoto"><img class="peopleimage" src="../assets/Wangxu.jpg" alt=""></div>
+                    <div class="peoplenameshadow"><div class="peoplemail">Wang Xu<br/>Professor<br>xu.wang@sjtu.edu.cn</div></div>
+                </div>
+            </div>
+            <div class="peopleboxbig">
+                <div class="peopleshadow">
+                        <div class="peoplephoto"><img class="peopleimage" src="../assets/Wangxu.jpg" alt=""></div>
+                        <div class="peoplenameshadow"><div class="peoplemail" >Wang Xu<br/>Professor<br>xu.wang@sjtu.edu.cn</div></div>
+                </div>
+            </div>
+            <!-- Master students -->
+        </div>
+        </el-card>
     </div>
 </template>
 
 <script>
+import header from '../components/header'
+import footer from '../components/footer'
+import peopleimage from '../components/peopleimage'
 export default {
-  name: 'teachers',
+  name: 'students',
   data () {
     return {}
   },
-  components: {}
+  components: {
+    'v-header': header,
+    'v-footer': footer,
+    'v-peopleimage': peopleimage
+  }
 }
 </script>
 
 <style scoped>
+.photo{
+    width:40px;
+    height:40px;
+}
+.people{
+    position: absolute;
+    left:250px;
+    width: 1400px;
+    height: 900px;
+    float: center;
+    margin-bottom:20px;
+}
+.card-box{
+    width:100%;
+}
+.peopletype{width:100%;height:60px;text-align:left;font:200 30px 'Times New Roman',Times,serif}
+.peopleshadowbig{width:100%; height:300px; background:#F7F7F7;margin:25px 0px 25px 0px;}
+.peopleshadow{width:645px; height:280px; background:#F7F7F7;margin:25px 5px 25px 0px;float:left;}
+.peopleboxbig{width:100%;text-align:left;overflow:hidden;}
+.peoplebox{width:645px;text-align:left;overflow:hidden;}
+.peoplephotobig{width:220px;height:300px;overflow:hidden;margin:10px; margin-top:25px;float:left;text-align:center}
+.peoplephoto{width:180px;height:250px;overflow:hidden;margin-top:15px;margin-left:10px;float:left;text-align:center;}
+.peopleimage{height:250px; margin :0 -100%;}
+.peoplenameshadowbig{margin:50px 0px 0px 20px;width:500px;float:left;}
+.peoplenameshadow{margin:30px 0px 0px 20px;width:325px;float:left;}
+/*.peopletype{font-family: 'Times New Roman', Times, serif; font-size: 20px; line-height: 30px; color: rgb(0, 176, 80); font-weight: 600;}*/
+.peoplemail{font-family: 'Times New Roman', Times, serif; font-size: 20px;margin-top:40px;margin-left: 20px;}
 
 </style>

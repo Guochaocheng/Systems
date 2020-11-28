@@ -1,7 +1,7 @@
 <template>
     <div class="contrainer">
         <el-row :gutter="20">
-            <el-col :span="10">
+            <el-col :span="14">
             <el-card class="box-card">
                 <div slot='header' class='clearfix'>
                     <span>上海交通大学细胞代谢与系统生物学实验室</span>
@@ -10,9 +10,10 @@
                     {{i}}
                 </div>
             </el-card>
+            <v-carousel> </v-carousel>
             </el-col>
-            <el-col :span="10">
-                <v-carousel> </v-carousel>
+            <el-col :span="6">
+                
             </el-col>
         </el-row>
     </div>
@@ -41,6 +42,16 @@ export default {
 </script>
 
 <style scoped>
+.container{
+    width: 1400px;
+    height: 850px;
+}
+.box-card{
+    width:800px;
+}
+.text, .clearfix{
+    margin-left: 20px;
+}
 .text{
     font-size: 18px;
     text-align: left;

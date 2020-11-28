@@ -37,29 +37,17 @@ export default {
 </script>
 
 <style scoped>
-.header {
-    width: 100%;
-    position: absolute;
-    top:0;
-    left:0;
-    right:0;
-    transition: all 0.1s;
-    margin: 0 auto;
-}
 .header a{
     font-size: 30px;
     float: left;
     height: 30px;
-    margin-top: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 15px;
     color:white;
     text-decoration:none;
 }
-.el-menu-demo {
-    width: 100%;
-    min-width: 500px;
-    border-radius: 0;
-    margin: 0 auto;
+.el-menu-demo{
+  top: 0px;
+  left: 0px;
+  width: 100%;
 }
 </style>

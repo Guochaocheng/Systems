@@ -1,10 +1,7 @@
 <template>
-    <div class="publications">
-        <!-- <v-header></v-header>
-        <el-container class="main">
-        </el-container>
-        <v-footer></v-footer> -->
-        <div style="width:1100px">
+    <div class="people">
+        <el-card class="card-box">
+        <div style="width:1400px">
             <div style="width:100%;height:100px;text-align:left;font:bold 35px Arial,Helvetica,sans-serif;line-height:100px" >People</div>
             <div style="width:100%;height:1px;background:#CCCCCC" ></div>
             <div style="width:100%;height:20px;"></div>
@@ -77,7 +74,7 @@
             </div>
             <!-- Master students -->
         </div>
-
+        </el-card>
     </div>
 </template>
 
@@ -103,12 +100,22 @@ export default {
     width:40px;
     height:40px;
 }
-
+.people{
+    position: absolute;
+    left:250px;
+    width: 1400px;
+    height: 900px;
+    float: center;
+    margin-bottom:20px;
+}
+.card-box{
+    width:100%;
+}
 .peopletype{width:100%;height:60px;text-align:left;font:200 30px 'Times New Roman',Times,serif}
 .peopleshadowbig{width:100%; height:300px; background:#F7F7F7;margin:25px 0px 25px 0px;}
-.peopleshadow{width:545px; height:280px; background:#F7F7F7;margin:25px 5px 25px 0px;float:left;}
+.peopleshadow{width:645px; height:280px; background:#F7F7F7;margin:25px 5px 25px 0px;float:left;}
 .peopleboxbig{width:100%;text-align:left;overflow:hidden;}
-.peoplebox{width:545px;text-align:left;overflow:hidden;}
+.peoplebox{width:645px;text-align:left;overflow:hidden;}
 .peoplephotobig{width:220px;height:300px;overflow:hidden;margin:10px; margin-top:25px;float:left;text-align:center}
 .peoplephoto{width:180px;height:250px;overflow:hidden;margin-top:15px;margin-left:10px;float:left;text-align:center;}
 .peopleimage{height:250px; margin :0 -100%;}

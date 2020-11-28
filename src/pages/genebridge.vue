@@ -20,7 +20,7 @@
           </el-form-item> 
           <el-form-item :label="label">
           <!-- <el-form-item prop="priority"><span slot="label">label</span> -->
-            <el-input v-model="geneModule" :placeholder="message"></el-input>
+            <el-input v-model="geneModule" v-bind:placeholder="message"></el-input>
           </el-form-item>
           <el-form-item>
             <el-button type="primary" icon="el-icon-search" :loading="loadtype" @click="onSubmit">Search</el-button>
@@ -59,7 +59,7 @@ export default {
       }],
       species: '',
       label : 'Gene Name',
-      message: "",
+      message: "Input gene name",
       geneModule: 'Input gene name',
       modulename: "GMADG",
       data:[{x:[1,3,5], y:[2,4,6],type:"scatter"}],

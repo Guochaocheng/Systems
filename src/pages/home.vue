@@ -1,6 +1,8 @@
 <template>
     <div class="home">
+    <el-card class="box-card">
     <v-introduction> </v-introduction>
+    </el-card>
     </div>
 </template>
 
@@ -18,4 +20,14 @@ export default{
 </script>
 
 <style scoped>
+.home{
+  position:absolute;
+  left:250px;
+  background-color:  #2c3e50;;
+}
+.el-card{
+  width:1400px;
+  height:780px;
+  left:250px;
+}
 </style>
