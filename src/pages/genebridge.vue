@@ -8,8 +8,8 @@
         <!-- choose species -->
         <div class="form">
         <el-form :inline="true" :model="formInline" class="demo-form-inline">
-          <el-form-item label="species">
-             <el-select v-model="species" placeholder="Arabidopsis thaliana" style="left:0px;positions:absolute;">
+          <el-form-item label="Species">
+             <el-select v-model="species" placeholder="Arabidopsis thaliana" >
                 <el-option 
                   v-for="item in speciesData"
                   :key="item.value"
@@ -23,16 +23,26 @@
             <el-input v-model="geneModule" :placeholder="message"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="onSubmit">Search</el-button>
+            <el-button type="primary" icon="el-icon-search" :loading="loadtype" @click="onSubmit">Search</el-button>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" icon="el-icon-bell" @click="Example">Example</el-button>
           </el-form-item>
         </el-form>
         <!-- choose species -->
+        </div>
+        <div class="plotRegion" >
+          <div class="plotscatter plot1" style="width:50%;height:400px">
+          <vue-plotly :data="data" :layout="layout" :options="options" />
+          </div>
         </div>
       </el-tabs>
     </div>
 </template>
 
 <script>
+import VuePlotly from '@statnett/vue-plotly'
+import Axios from 'axios'
 export default {
   name: 'genebridge',
   data () {
@@ -51,30 +61,71 @@ export default {
       label : 'Gene Name',
       message: "",
       geneModule: 'Input gene name',
-      modulename: "GMADG"
+      modulename: "GMADG",
+      data:[{x:[1,3,5], y:[2,4,6],type:"scatter"}],
+      layout: {
+        xaxis:{title: "Gene Name"},
+        yaxis:{title: "GMAD"},
+        
+      },
+      options: {},
     }
   },
   methods:{
+    
+    getData(){
+      //var api='http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=1';
+      //Axois.get(api).then((response) => {
+      //  this.result =  response.data.result;
+      //}).catch((error) => {
+      //  console.log(error),
+      //})
+      this.$http.get('http://localhost:3000/api/show').then((res) => {
+        console.log('res', res);
+        this.label = res.data.data;
+      })
+    },
     onSubmit(){
+      this.$http.get('/api/show')
+      .then((res) => {
+        console.log('res', res)
+        this.label = res.data.data
+      })
       console.log('Submit!');
+    },
+    Example(){
+      if(tab.name == "GMADG"){
+        this.geneModule = "AT1G01000"
+      }else{
+        this.geneModule = "GO:000001"
+      }
     },
     handleClick(tab, event){
       if(tab.name == "GMADG"){
-        label = 'Gene Name';
-        message = 'Input gene name';
+        this.label = 'Gene Name';
+        this.message = 'Input gene name';
       }else{
-        label = 'Module Name';
-        message = 'Input module name';
+        this.label = 'Module Name';
+        this.message = 'Input module name';
       }
     }
   },
-  components: {},
+  /*mounted(){
+    this.getData();
+  },*/
+  components: {VuePlotly},
 }
 </script>
 
 <style scoped>
 .form{
   float:left;
-
+}
+.vue-plotly{
+  margin-top:50px;
+}
+.plotscatter{
+  margin:10px;
+  margin-bottom:50px;
 }
 </style>

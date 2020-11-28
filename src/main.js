@@ -7,14 +7,17 @@ import App from './App'
 import router from './router'
 import './components/container.css'
 import 'normalize.css'
+import axios from 'axios'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+Vue.prototype.$axios = axios;
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  axios,
   components: { App },
   template: '<App/>',
   render: h => h(App)
