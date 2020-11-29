@@ -1,10 +1,46 @@
-var models = require('../db');
+var dbConfig = require('./db');
+var mysql = require('mysql');
+var sqlMap = require('./sqlMap');
+// other packages
 var express = require('express');
 var router = express.Router();
-var mysql = require('mysql');
-var $sql = require('../sqlMap');
 
 // connect to the mysql
+const pool = mysql.createPool ({
+    host: dbConfig.host,
+    user: dbConfig.user,
+    password: dbConfig.password,
+    database: dbConfig.database,
+    port: dbConfig.port,
+    multipleStatements: true
+})
+
+module.exports = {
+    getValue(req, res, next) {
+        var id = req.query.id;
+        pool.getConnection((err, connection) => {
+            var sql = sqlMap.getValue;
+            connection.query(sql, [id], (err, result) => {
+                res.json(result);
+                connection.release();
+            })
+        })
+    },
+    setValue(req, res, next) {
+        console.log(req.body);
+        var id = req.body.id;
+        var name = req.body.name;
+        pool.getConnection((err, connection) => {
+            var sql = sqlMap.setValue;
+            connection.query(sql, [name, id], (err, result) =>{
+                res.json(result);
+                connection.release();
+            })
+        })
+    }
+}
+
+/*
 var conn = mysql.createConnection(models.mysql);
 conn.connect();
 var jsonWrite = function(res, ret){

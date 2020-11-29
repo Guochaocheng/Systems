@@ -8,10 +8,14 @@ import router from './router'
 import './components/container.css'
 import 'normalize.css'
 import axios from 'axios'
+import VueRouter from 'vue-router'
+import VueResource from 'vue-resource'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.prototype.$axios = axios;
+Vue.use(VueRouter)
+Vue.use(VueResource)
 
 /* eslint-disable no-new */
 new Vue({

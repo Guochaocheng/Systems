@@ -1,7 +1,7 @@
 <template>
     <div class="people">
         <el-card class="card-box">
-        <div style="width:1400px">
+        <div style="width:1300px">
             <div style="width:100%;height:100px;text-align:left;font:bold 35px Arial,Helvetica,sans-serif;line-height:100px" >People</div>
             <div style="width:100%;height:1px;background:#CCCCCC" ></div>
             <div style="width:100%;height:20px;"></div>

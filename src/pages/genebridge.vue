@@ -23,10 +23,10 @@
             <el-input v-model="geneModule" v-bind:placeholder="message"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" icon="el-icon-search" :loading="loadtype" @click="onSubmit">Search</el-button>
+            <el-button type="primary" icon="el-icon-search" :loading="loadtype" @click="getData">Search</el-button>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" icon="el-icon-bell" @click="Example">Example</el-button>
+            <el-button type="primary" icon="el-icon-bell" @click="Setvalue">Example</el-button>
           </el-form-item>
         </el-form>
         <!-- choose species -->
@@ -72,17 +72,23 @@ export default {
     }
   },
   methods:{
-    
     getData(){
-      //var api='http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=1';
-      //Axois.get(api).then((response) => {
-      //  this.result =  response.data.result;
-      //}).catch((error) => {
-      //  console.log(error),
-      //})
-      this.$http.get('http://localhost:3000/api/show').then((res) => {
+      var id = this.geneModule;
+      this.$http.get('/api/getValue', {
+        params: {id:1}
+      }).then((res) => {
         console.log('res', res);
-        this.label = res.data.data;
+        this.label = res.data[0].name;
+      })
+    },
+    setValue(){
+      var id = this.geneModule;
+      var name = this.species;
+      this.$http.post('/api/setValue', {
+          id: 2,
+          name: 'Ath'
+      }).then( (res) => {
+        console.log('res', res)
       })
     },
     onSubmit(){

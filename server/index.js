@@ -1,11 +1,15 @@
-const path = require('path');
-const express = require('express');
-const userApi = require('./api/userApi')
-const fs = require('fs')
+const routerApi = require('./router');
 const bodyParser = require('body-parser')
+const express = require('express');
 const app = express();
+// other packages;
+//const path = require('path');
+//const userApi = require('./api/userApi')
+//const fs = require('fs')
 
 
+
+/*
 //采用设置所有均可访问的方法解决跨域问题
 app.all('*', function (req, res, next) {
     //设置允许跨域的域名，*代表允许任意域名跨域
@@ -19,10 +23,11 @@ app.all('*', function (req, res, next) {
     else 
         next;
 })
+*/
 app.use(bodyParser.json()) // 以json格式返回出去
 app.use(bodyParser.urlencoded({ extended: false }))
 // 后端api路由
-app.use('/api/GMAD', userApi)
+app.use('/api', routerApi)
 app.listen(3000);
 console.log('Success listen at port: 3000......');
 
