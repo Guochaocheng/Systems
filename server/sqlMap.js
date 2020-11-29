@@ -2,7 +2,7 @@
 const sqlMap = {
     getValue : 'SELECT * FROM test2 WHERE id = ?',
     /*setValue : 'UPDATE test2 SET name = ? WHERE id =? '*/
-    setVaule : 'INSERT INTO test2 (id, name) VALUES (3, "rice")'
+    setVaule : 'INSERT INTO test2 (id, name) VALUES (?, ?)'
     /*
     GMAD: {
         show: 'select * from test'
