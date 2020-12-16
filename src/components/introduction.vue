@@ -1,8 +1,8 @@
 <template>
-    <div class="contrainer">
+    <div class="container">
         <el-row :gutter="20">
             <el-col :span="14">
-            <el-card class="box-card">
+            <el-card class="boxcard">
                 <div slot='header' class='clearfix'>
                     <span>上海交通大学细胞代谢与系统生物学实验室</span>
                 </div>
@@ -46,7 +46,7 @@ export default {
     width: 1400px;
     height: 850px;
 }
-.box-card{
+.boxcard{
     width:800px;
 }
 .text, .clearfix{

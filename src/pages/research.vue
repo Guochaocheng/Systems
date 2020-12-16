@@ -1,28 +1,39 @@
 <template>
    <div class="research">
-    <el-card class="box-card">
-    <v-introduction> </v-introduction>
-    </el-card>
+     <el-container>
+    <el-header class="header" >
+      <gheader />
+    </el-header>
+    <el-main class="main">
+      <el-card class="boxcard">
+      <v-introduction> </v-introduction>
+      </el-card>
+    </el-main>
+    <el-footer class="footer" >
+      <gfooter/>
+    </el-footer>
+    </el-container>
     </div>
 </template>
 
 <script>
+import gheader from '@/components/header'
+import gfooter from '@/components/footer'
 export default {
   name: 'research',
   data () {
     return {}
   },
-  components: {}
+  components: {
+    gheader,
+    gfooter
+  }
 }
 </script>
 
 <style scoped>
-.research{
+.boxcard{
   position:absolute;
-  left:250px;
-  background-color:  #2c3e50;;
-}
-.box-card{
   width:1400px;
   height:780px;
   left:250px;

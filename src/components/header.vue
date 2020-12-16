@@ -13,6 +13,7 @@
             <el-menu-item index="/contactus"><span class="el-icon-s-promotion"></span>CONTACT US</el-menu-item>
             <el-submenu index="/resources">
             <template slot="title"><span class="el-icon-s-platform"></span>RESOURCES</template>
+            <!--<el-menu-item index="/resources/genebridge">GeneBridge</el-menu-item>-->
             <el-menu-item index="/resources/genebridge">GeneBridge</el-menu-item>
             </el-submenu>
         </el-menu>
@@ -49,5 +50,8 @@ export default {
   top: 0px;
   left: 0px;
   width: 100%;
+}
+.header{
+  margin-bottom: 50px;
 }
 </style>

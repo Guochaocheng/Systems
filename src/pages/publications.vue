@@ -1,29 +1,39 @@
 <template>
   <div class="publications">
-    <el-card class="box-card" >
-      <h1 style="text-align: left;color:tomato;margin-left:20px;margin-bottom:20px;">2020</h1>
-      <ol>
-      <li v-for="pub in publist2020" :key="pub" class="text item">{{pub}}</li>
-      </ol>
-      <h1 style="text-align: left;color:tomato;margin-left:20px;margin-bottom:20px;">2019</h1>
-      <ol>
-      <li v-for="pub in publist2019" :key="pub" class="text item">{{pub}}</li>
-      </ol>
-      <h1 style="text-align: left;color:tomato;margin-left:20px;margin-bottom:20px;">2018</h1>
-      <ol>
-      <li v-for="pub in publist2018" :key="pub" class="text item">{{pub}}</li>
-      </ol>
-      <h1 style="text-align: left;color:tomato;margin-left:20px;margin-bottom:20px;">2017</h1>
-      <ol>
-      <li v-for="pub in publist2017" :key="pub" class="text item">{{pub}}</li>
-      </ol>
-    </el-card>
+    <el-container>
+    <el-header class="header" >
+      <gheader />
+    </el-header >
+    <el-main class="main">
+      <el-card class="boxcard" >
+        <h1 style="text-align: left;color:tomato;margin-left:20px;margin-bottom:20px;">2020</h1>
+        <ol>
+        <li v-for="pub in publist2020" :key="pub" class="text item">{{pub}}</li>
+        </ol>
+        <h1 style="text-align: left;color:tomato;margin-left:20px;margin-bottom:20px;">2019</h1>
+        <ol>
+        <li v-for="pub in publist2019" :key="pub" class="text item">{{pub}}</li>
+        </ol>
+        <h1 style="text-align: left;color:tomato;margin-left:20px;margin-bottom:20px;">2018</h1>
+        <ol>
+        <li v-for="pub in publist2018" :key="pub" class="text item">{{pub}}</li>
+        </ol>
+        <h1 style="text-align: left;color:tomato;margin-left:20px;margin-bottom:20px;">2017</h1>
+        <ol>
+        <li v-for="pub in publist2017" :key="pub" class="text item">{{pub}}</li>
+        </ol>
+      </el-card>
+    </el-main>
+    <el-footer class="footer" >
+      <gfooter/>
+    </el-footer>
+    </el-container>
   </div>
 </template>
 
 <script>
-import header from '../components/header'
-import footer from '../components/footer'
+import gheader from '@/components/header'
+import gfooter from '@/components/footer'
 export default {
   name: 'publications',
   data () {
@@ -41,17 +51,14 @@ export default {
     }
   },
   components: {
-    'v-header': header,
-    'v-footer': footer
+    gheader,
+    gfooter
   }
 }
 </script>
 
 <style scoped>
-.publications{
-  position:absolute;
-  left:250px;
-}
+
 .year{
   float:left;
   color:tomato;
@@ -70,7 +77,8 @@ export default {
   margin-left:20px;
   font-family: "Microsoft YaHei" ! important;
 }
-.box-card{
+.boxcard{
+  position:absolute;
   width:1400px;
   height:780px;
   left:250px;

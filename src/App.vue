@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+  <router-view></router-view>
+    <!-- 
     <el-container>
     <el-header class="header" >
       <gheader />
@@ -11,11 +13,12 @@
       <gfooter/>
     </el-footer>
     </el-container>
+    -->
   </div>
 </template>
 
 <script>
-import gheader from '@/components/header.vue'
+import gheader from '@/components/header'
 import gfooter from '@/components/footer'
 
 export default {
@@ -44,33 +47,17 @@ export default {
   padding-bottom: 60px;
   box-sizing: border-box;
 }
-head{
-  width: 100%;
-  left: 0px;
-}
 html, body{
   height:100%;
   background-color:aliceblue;
 }
-.footer, .wraper::after{
-  height:30px;
-}
-.el-main{
-  margin-top:80px;
-  margin-bottom: 20px;
-  color: #2c3e50;
-  min-height: calc(100vh - 90px);
-  border-radius: 0;
-}
 .footer {
-    position: fixed;
+    position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 30px;
+    height:60px;
     background-color:  #545C64;
     float: center;
-    display: block;
-    margin: 0 auto;
 }
 .header{
   left:0px;
@@ -79,4 +66,5 @@ html, body{
   top:0px;
   transition: all 0.1s;
 }
+.main{margin-top: 60px;}
 </style>

@@ -1,46 +1,59 @@
 <template>
-    <div class="genebridge">
-      <el-tabs v-model="modulename" type="border-card" @tab-click="handleClick">
-          <el-tab-pane label="G-MAD-genes" name="GMADG"></el-tab-pane>
-          <el-tab-pane label="G-MAD-modules" name="GMADM"></el-tab-pane>
-          <el-tab-pane label="M-MAD-modules" name="MMAD"></el-tab-pane>
+    <el-container>
+      <el-header>
+        <gheader />
+      </el-header>
+      <el-main class="main">
+      <div class="genebridge">
+        <el-tabs v-model="modulename" type="border-card" @tab-click="handleClick">
+            <el-tab-pane label="G-MAD-genes" name="GMADG"></el-tab-pane>
+            <el-tab-pane label="G-MAD-modules" name="GMADM"></el-tab-pane>
+            <el-tab-pane label="M-MAD-modules" name="MMAD"></el-tab-pane>
 
-        <!-- choose species -->
-        <div class="form">
-        <el-form :inline="true" :model="formInline" class="demo-form-inline">
-          <el-form-item label="Species">
-             <el-select v-model="species" placeholder="Arabidopsis thaliana" >
-                <el-option 
-                  v-for="item in speciesData"
-                  :key="item.value"
-                  :label="item.label"
-                  :value="item.value">
-                </el-option>
-              </el-select>
-          </el-form-item> 
-          <el-form-item :label="label">
-          <!-- <el-form-item prop="priority"><span slot="label">label</span> -->
-            <el-input v-model="geneModule" v-bind:placeholder="message"></el-input>
-          </el-form-item>
-          <el-form-item>
-            <el-button type="primary" icon="el-icon-search" :loading="loadtype" @click="getData">Search</el-button>
-          </el-form-item>
-          <el-form-item>
-            <el-button type="primary" icon="el-icon-bell" @click="Setvalue">Example</el-button>
-          </el-form-item>
-        </el-form>
-        <!-- choose species -->
-        </div>
-        <div class="plotRegion" >
-          <div class="plotscatter plot1" style="width:50%;height:400px">
-          <vue-plotly :data="data" :layout="layout" :options="options" />
+          <!-- choose species -->
+          <div class="form">
+          <el-form :inline="true" :model="formInline" class="demo-form-inline">
+            <el-form-item label="Species">
+              <el-select v-model="species" placeholder="Arabidopsis thaliana" >
+                  <el-option 
+                    v-for="item in speciesData"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
+            </el-form-item> 
+            <el-form-item :label="label">
+            <!-- <el-form-item prop="priority"><span slot="label">label</span> -->
+              <el-input v-model="geneModule" v-bind:placeholder="message"></el-input>
+            </el-form-item>
+            <el-form-item>
+              <el-button type="primary" icon="el-icon-search" :loading="loadtype" @click="getData">Search</el-button>
+            </el-form-item>
+            <el-form-item>
+              <el-button type="primary" icon="el-icon-bell" @click="Setvalue">Example</el-button>
+            </el-form-item>
+          </el-form>
+          <!-- choose species -->
           </div>
-        </div>
-      </el-tabs>
-    </div>
+          <div class="plotRegion" >
+            <div class="plotscatter plot1" style="width:50%;height:400px">
+            <vue-plotly :data="plotdata" :layout="layout" :options="options" />
+            </div>
+          </div>
+        </el-tabs>
+      </div>
+      </el-main>
+      <el-footer>
+        <gfooter />
+      </el-footer>
+    </el-container>
+        
 </template>
 
 <script>
+import gheader from '@/components/gene_header'
+import gfooter from '@/components/footer'
 import VuePlotly from '@statnett/vue-plotly'
 import Axios from 'axios'
 export default {
@@ -62,7 +75,7 @@ export default {
       message: "Input gene name",
       geneModule: 'Input gene name',
       modulename: "GMADG",
-      data:[{x:[1,3,5], y:[2,4,6],type:"scatter"}],
+      plotdata:[{x:[1,3,5], y:[2,4,6],type:"scatter",mode:"markers"}],
       layout: {
         xaxis:{title: "Gene Name"},
         yaxis:{title: "GMAD"},
@@ -119,7 +132,11 @@ export default {
   /*mounted(){
     this.getData();
   },*/
-  components: {VuePlotly},
+  components: {
+    VuePlotly,
+    gheader,
+    gfooter,
+    Axios},
 }
 </script>
 
@@ -133,5 +150,16 @@ export default {
 .plotscatter{
   margin:10px;
   margin-bottom:50px;
+}
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height:60px;
+    background-color:  #545C64;
+    float: center;
+}
+.main{
+  margin-top: 100px;
 }
 </style>

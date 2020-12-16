@@ -1,5 +1,10 @@
 <template>
-    <div class="people">
+    <el-container>
+    <el-header class="header" >
+      <gheader />
+    </el-header>
+    <el-main class="main">
+        <div class="people">
         <el-card class="card-box">
         <div style="width:1300px">
             <div style="width:100%;height:100px;text-align:left;font:bold 35px Arial,Helvetica,sans-serif;line-height:100px" >People</div>
@@ -75,21 +80,26 @@
             <!-- Master students -->
         </div>
         </el-card>
-    </div>
+        </div>
+    </el-main>
+    <el-footer class="footer" >
+      <gfooter/>
+    </el-footer>
+    </el-container>
 </template>
 
 <script>
-import header from '../components/header'
-import footer from '../components/footer'
+import gheader from '@/components/header'
+import gfooter from '@/components/footer'
 import peopleimage from '../components/peopleimage'
 export default {
-  name: 'students',
+  name: 'teachers',
   data () {
     return {}
   },
   components: {
-    'v-header': header,
-    'v-footer': footer,
+    gheader,
+    gfooter,
     'v-peopleimage': peopleimage
   }
 }
@@ -124,4 +134,5 @@ export default {
 /*.peopletype{font-family: 'Times New Roman', Times, serif; font-size: 20px; line-height: 30px; color: rgb(0, 176, 80); font-weight: 600;}*/
 .peoplemail{font-family: 'Times New Roman', Times, serif; font-size: 20px;margin-top:40px;margin-left: 20px;}
 
+/*.footer{position:absolute; bottom:1500px;}*/
 </style>
